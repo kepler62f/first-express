@@ -18,7 +18,10 @@ app.get('/faq', function(req, res) { //request, response
   res.send('faq page')
 })  // '/' goes to root path
 
+app.post('/')
 
-app.listen(3000, function () {
-  console.log('express is running on port 3000');
+var port = process.env.PORT || 3000 // 3000 as local default if Heroku port n.a.
+// process.env is Heroku's given port
+app.listen(port, function () {
+  console.log('express is running on port '+ port);
 })
